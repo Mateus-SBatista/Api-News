@@ -175,6 +175,81 @@ testepratico/
 |-- Dockerfile
 ```
 
+## Endpoints
+
+### **Listar todas as notícias**
+- **URL**: `/api/api_noticias/` ou `/api/memoria/api_noticias`
+- **Método**: `GET`
+- **Resposta**:
+  ```json
+  [
+    {
+      "id": 1,
+      "titulo": "Exemplo de Notícia",
+      "conteudo": "Este é um conteúdo de exemplo",
+      "autor": "Autor Exemplo",
+      "ativo" true
+      "data_publicacao": "2025-01-23T10:00:00Z"
+    }
+  ]
+  ```
+
+### **Criar uma nova notícia**
+- **URL**: `/api/api_noticias/` ou `/api/memoria/api_noticias`
+- **Método**: `POST`
+- **Body**:
+  ```json
+  {
+    "titulo": "Nova Notícia",
+    "conteudo": "Conteúdo da notícia",
+    "autor": "Autor da Notícia"
+    "ativo" true
+  }
+  ```
+- **Resposta**:
+  ```json
+  {
+    "id": 2,
+    "titulo": "Nova Notícia",
+    "conteudo": "Conteúdo da notícia",
+    "autor": "Autor da Notícia",
+    "ativo" true
+    "data_publicacao": "2025-01-23T10:15:00Z"
+  }
+  ```
+
+### **Atualizar uma notícia**
+- **URL**: `/api/api_noticias/{id}/` ou `/api/memoria/api_noticias/{id}`
+- **Método**: `PUT` 
+- **Body**
+  ```json
+  {
+    "titulo": "Título Atualizado"
+  }
+  ```
+- **Resposta**:
+  ```json
+  {
+    "id": 2,
+    "titulo": "Título Atualizado",
+    "conteudo": "Conteúdo da notícia",
+    "autor": "Autor da Notícia",
+    "ativo" true
+    "data_publicacao": "2025-01-23T10:15:00Z"
+  }
+  ```
+
+### **Deletar uma notícia**
+- **URL**: `/api/noticias/{id}/`
+- **Método**: `DELETE`
+- **Resposta**:
+  ```json
+  {
+    "detail": "Notícia removida permanentemente."
+  }
+  ```
+**O método alternativo para deletar uma publicação é usando a função ativo ou inativo, caso ativo = True, as noticias serão listadas com todas as notícias, caso contrario, a noticia estará inativa, mas poderar ser editada usando o id**
+
 ## Contato
 Caso tenha dúvidas ou precise de suporte, envie um e-mail para mateus_sbatista@hotmail.com.
 
