@@ -1,0 +1,31 @@
+GET http://127.0.0.1:8000//api/memoria/api_noticias/
+
+###
+
+POST http://127.0.0.1:8000//api/memoria/api_noticias/
+Content-Type: application/json
+
+{
+    "titulo": "Nova notícia da Memoria",
+    "conteudo": "Conteúdo da notícia",
+    "autor": "Autor Exemplo",
+    "publicado": true
+}
+###
+
+GET http://127.0.0.1:8000//api/memoria/api_noticias/1/
+
+###
+
+PUT http://127.0.0.1:8000//api/memoria/api_noticias/1/
+Content-Type: application/json
+
+{
+    "titulo": "Nova notícia atualizada",
+    "conteudo": "Conteúdo da notícia",
+    "autor": "Autor Exemplo",
+    "publicado": true
+}
+###
+
+DELETE http://127.0.0.1:8000//api/memoria/api_noticias/1/

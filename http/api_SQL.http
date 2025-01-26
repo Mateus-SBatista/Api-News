@@ -1,0 +1,37 @@
+GET http://127.0.0.1:8000/api/api_noticias/ 
+#-MOSTRA TODAS AS NOTÍCIAS CADASTRADAS
+
+###
+
+POST  http://127.0.0.1:8000/api/api_noticias/
+#-CRIA UMA NOVA NOTÍCIA
+Content-Type: application/json
+
+{
+    "titulo": "Título da Noticia",
+    "conteudo": "Conteudo da noticia",
+    "autor": "Autor da Noticia"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/api_noticias/<id>/
+#-PROCURA UMA NOTÍCIA ESPECÍFICA PELO ID
+
+###
+
+PUT http://127.0.0.1:8000/api/api_noticias/<id>/
+#-ATUALIZA UMA NOTÍCIA PELO ID
+Content-Type: application/json
+
+{
+    "titulo": "Novo Título da Noticia",
+    "conteudo": "Novo Conteudo da noticia",
+    "autor": "Era uma News",
+    "ativo" : true
+}
+
+###
+
+DELETE http://127.0.0.1:8000/api/api_noticias/<id>/
+#-DELETA UMA NOTÍCIA PELO ID
