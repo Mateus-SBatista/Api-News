@@ -58,10 +58,11 @@ Esta é uma API REST desenvolvida com Django REST Framework para gerenciar notí
    ```
 
 6. **Acesse a API**:
-    **Banco de Dados SQL
+   
+    **Banco de Dados SQL**
    - URL base: `http://127.0.0.1:8000/api/api_noticias`
 
-   **Banco de memória
+   **Banco de memória**
    - URL base: `http://127.0.0.1:8000/api/memoria/api_noticias`
 
 ### Usando Docker
@@ -69,26 +70,35 @@ Esta é uma API REST desenvolvida com Django REST Framework para gerenciar notí
 1. **Certifique-se de ter Docker instalado**.
 
 2. **Construa e inicie os containers**:
+   ```bash
    docker build -t api_docker .
 
    docker run -d -p 8000:8000 --name api  api_docker
+   ```
 
    **Para iniciar o servidor Docker**
+   ```bash
    docker start api
+   ```
 
    **Para parar o servidor Docker**
+   ```bash
    docker stop api
+   ```
 
 
-3. **Acesse a API**:
-   - URL base: `http://127.0.0.1:8000/api/`
+3. **Banco de Dados SQL**
+   - URL base: `http://127.0.0.1:8000/api/api_noticias`
+
+   **Banco de memória**
+   - URL base: `http://127.0.0.1:8000/api/memoria/api_noticias`
 
 ### Utilizando o arquivo .http
-    Você também pode utilizar um arquivo `.http` para interagir com a API sem precisar usar o navegador. Os arquivos "api_memoria.http" e "api_SQL.http" vão conter as seguintes requisições de exemplo:
+   Você também pode utilizar um arquivo `.http` para interagir com a API sem precisar usar o navegador. Os arquivos "api_memoria.http" e "api_SQL.http" vão conter as seguintes requisições de exemplo:
 
-    **utilizado o aquivo "api_SQL.http"**
+   **utilizado o aquivo "api_SQL.http"**
 
-    ```http
+    
     GET http://127.0.0.1:8000/api/api_noticias/
 
     ###
@@ -121,7 +131,7 @@ Esta é uma API REST desenvolvida com Django REST Framework para gerenciar notí
     ###
 
     DELETE http://127.0.0.1:8000/api/api_noticias/<id>/
-    ```
+    
 
 Você pode executar esse arquivo diretamente em editores como o VS Code, usando uma extensão como o [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 
@@ -166,5 +176,5 @@ testepratico/
 ```
 
 ## Contato
-Caso tenha dúvidas ou precise de suporte, envie um e-mail para [mateus_sbatista@hotmail.com].
+Caso tenha dúvidas ou precise de suporte, envie um e-mail para mateus_sbatista@hotmail.com.
 
